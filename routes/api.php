@@ -30,8 +30,8 @@ Route::get('/post/{id}',[PostController::class,'show']);
 
 //protected Routes
 Route::group(['middleware' => ['auth:sanctum']], function(){
-    Route::get('/post',[PostController::class, 'viewAllPost']);
-    Route::post('/post',[PostController::class, 'createPost']);
+    Route::get('post',[PostController::class, 'viewAllPost']);
+    Route::post('post',[PostController::class, 'createPost']);
     Route::get('searchPost/{slug}', [PostController::class, 'searchPost']);
     Route::put('updatePost/{id}',[PostController::class, 'editPost']);
     Route::get('deletePost/{id}',[PostController::class, 'deletePost']);
